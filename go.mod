@@ -1,4 +1,4 @@
-module github.com/pixil98/go-log
+module github.com/pixil98/go-log/log
 
 go 1.19
 
