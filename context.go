@@ -12,13 +12,13 @@ const (
 
 type key string
 
-func GetLogger(ctx context.Context) *logrus.Logger {
+func GetLogger(ctx context.Context) logrus.FieldLogger {
 	val := ctx.Value(loggerKey)
 	if val == nil {
 		return NewLogger()
 	}
 
-	logger, ok := val.(*logrus.Logger)
+	logger, ok := val.(logrus.FieldLogger)
 	if !ok {
 		return NewLogger()
 	}
